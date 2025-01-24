@@ -1,9 +1,9 @@
 import { reactRouter } from "@react-router/dev/vite";
-import { cloudflareDevProxy } from "@react-router/dev/vite/cloudflare";
 import autoprefixer from "autoprefixer";
 import tailwindcss from "tailwindcss";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import { cloudflare } from "@cloudflare/vite-plugin";
 
 export default defineConfig(({ isSsrBuild }) => ({
   build: {
@@ -18,13 +18,5 @@ export default defineConfig(({ isSsrBuild }) => ({
       plugins: [tailwindcss, autoprefixer],
     },
   },
-  plugins: [
-    cloudflareDevProxy({
-      getLoadContext({ context }) {
-        return { cloudflare: context.cloudflare };
-      },
-    }),
-    reactRouter(),
-    tsconfigPaths(),
-  ],
+  plugins: [cloudflare(), reactRouter(), tsconfigPaths()],
 }));
