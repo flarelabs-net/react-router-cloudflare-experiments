@@ -1,0 +1,13 @@
+diff --git a/dist/index.js b/dist/index.js
+index 260a8e9c18d9fed87cda0d0573ec10f164c308e3..0a9f52a52cd3fafe7112f0cf1dc9537e7141e859 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -2364,7 +2364,7 @@ function cloudflare2(pluginConfig = {}) {
+         return entryWorker.fetch(toMiniflareRequest(request), {
+           redirect: "manual"
+         });
+-      });
++      }, { alwaysCallNext: false });
+       handleWebSocket(
+         viteDevServer.httpServer,
+         entryWorker.fetch,
