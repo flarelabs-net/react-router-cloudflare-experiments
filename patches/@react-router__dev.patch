@@ -1,0 +1,29 @@
+diff --git a/dist/vite.js b/dist/vite.js
+index 7be8944195fb528d871c37f89433961ac0069f81..c9e8ecf9e3f590d0af4e82e405bfb7b7f052fa90 100644
+--- a/dist/vite.js
++++ b/dist/vite.js
+@@ -1765,6 +1765,24 @@ var reactRouterVitePlugin = () => {
+               externalConditions: viteCommand === "build" ? viteServerConditions : ["development", ...viteServerConditions]
+             }
+           },
++          environments: {
++            // Not using the SSR environment for now to avoid other config collisions
++            my_worker: {
++              optimizeDeps: {
++                entries: ctx.reactRouterConfig.future.unstable_optimizeDeps ? [
++                  ctx.entryServerFilePath,
++                  ...Object.values(ctx.reactRouterConfig.routes).map(
++                    (route) => path6.join(ctx.reactRouterConfig.appDirectory, route.file)
++                  )
++                ] : [],
++                include: [
++                  // These are not discovered by the dependency crawler because they are imported as a result of the JSX transform
++                  "react",
++                  "react/jsx-dev-runtime",
++                ]
++              }
++            }
++          },
+           optimizeDeps: {
+             entries: ctx.reactRouterConfig.future.unstable_optimizeDeps ? [
+               ctx.entryClientFilePath,
