@@ -32,7 +32,8 @@
   },
   "pnpm": {
     "patchedDependencies": {
-      "@cloudflare/vite-plugin": "patches/@cloudflare__vite-plugin.patch"
+      "@cloudflare/vite-plugin": "patches/@cloudflare__vite-plugin.patch",
+      "@react-router/dev": "patches/@react-router__dev.patch"
     }
   }
 }
