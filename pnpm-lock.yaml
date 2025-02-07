@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   '@cloudflare/vite-plugin':
-    hash: ltq3g2oy4a6jzj27bs7twohjmi
+    hash: 223m2bd42rq7iaqccuz2j4of54
     path: patches/@cloudflare__vite-plugin.patch
   '@react-router/dev':
     hash: 3j54h5zfgvjuulsggdxxhgc4cy
@@ -18,7 +18,7 @@ importers:
     dependencies:
       '@cloudflare/vite-plugin':
         specifier: ^0.0.2
-        version: 0.0.2(patch_hash=ltq3g2oy4a6jzj27bs7twohjmi)(vite@6.0.11(@types/node@20.17.16)(jiti@1.21.7)(yaml@2.7.0))(wrangler@3.105.0(@cloudflare/workers-types@4.20250121.0))
+        version: 0.0.2(patch_hash=223m2bd42rq7iaqccuz2j4of54)(vite@6.0.11(@types/node@20.17.16)(jiti@1.21.7)(yaml@2.7.0))(wrangler@3.105.0(@cloudflare/workers-types@4.20250121.0))
       '@react-router/serve':
         specifier: 0.0.0-nightly-7de375944-20250206
         version: 0.0.0-nightly-7de375944-20250206(react-router@0.0.0-nightly-7de375944-20250206(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
@@ -2286,7 +2286,7 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/vite-plugin@0.0.2(patch_hash=ltq3g2oy4a6jzj27bs7twohjmi)(vite@6.0.11(@types/node@20.17.16)(jiti@1.21.7)(yaml@2.7.0))(wrangler@3.105.0(@cloudflare/workers-types@4.20250121.0))':
+  '@cloudflare/vite-plugin@0.0.2(patch_hash=223m2bd42rq7iaqccuz2j4of54)(vite@6.0.11(@types/node@20.17.16)(jiti@1.21.7)(yaml@2.7.0))(wrangler@3.105.0(@cloudflare/workers-types@4.20250121.0))':
     dependencies:
       '@hattip/adapter-node': 0.0.49
       miniflare: 3.20241230.2
