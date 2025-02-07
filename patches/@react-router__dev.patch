@@ -1,0 +1,29 @@
+diff --git a/dist/vite.js b/dist/vite.js
+index 12ddb57d94444a2de74d91ec8e76be905a95370e..2304457860cc002b22567b37b9e63dce2a25a92f 100644
+--- a/dist/vite.js
++++ b/dist/vite.js
+@@ -3841,6 +3841,15 @@ async function getEnvironmentOptionsResolvers(ctx, buildManifest, viteCommand) {
+             format: serverModuleFormat
+           }
+         }
++      },
++      optimizeDeps: {
++        entries: [
++          vite2.normalizePath(ctx.entryServerFilePath),
++          ...Object.values(ctx.reactRouterConfig.routes).map((route) =>
++            resolveRelativeRouteFilePath(route, ctx.reactRouterConfig)
++          )
++        ],
++        include: ['react', 'react/jsx-dev-runtime']
+       }
+     });
+   }
+@@ -3903,7 +3912,7 @@ async function getEnvironmentOptionsResolvers(ctx, buildManifest, viteCommand) {
+       build: {
+         outDir: getServerBuildDirectory(ctx),
+         rollupOptions: {
+-          input: viteUserConfig.build?.rollupOptions?.input ?? virtual.serverBuild.id
++          input: viteUserConfig.environments?.ssr?.build?.rollupOptions?.input ?? viteUserConfig.build?.rollupOptions?.input ?? virtual.serverBuild.id
+         }
+       }
+     });

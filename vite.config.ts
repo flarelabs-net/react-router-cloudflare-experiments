@@ -5,18 +5,34 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { cloudflare } from "@cloudflare/vite-plugin";
 
-export default defineConfig(({ isSsrBuild }) => ({
-  build: {
-    rollupOptions: isSsrBuild
-      ? {
-          input: "./workers/app.ts",
-        }
-      : undefined,
-  },
+export default defineConfig({
+  // environments: {
+  //   ssr: {
+  //     build: {
+  //       rollupOptions: {
+  //         input: "./workers/app.ts",
+  //       },
+  //     },
+  //   },
+  //   dummy: {},
+  // },
   css: {
     postcss: {
       plugins: [tailwindcss, autoprefixer],
     },
   },
-  plugins: [cloudflare(), reactRouter(), tsconfigPaths()],
-}));
+  plugins: [
+    cloudflare({ viteEnvironment: { name: "ssr" } }),
+    reactRouter(),
+    tsconfigPaths(),
+    {
+      name: "test-plugin",
+      config(userConfig) {
+        // console.log(userConfig.environments.ssr);
+      },
+      configResolved(resolvedConfig) {
+        // console.log(resolvedConfig.environments.dummy);
+      },
+    },
+  ],
+});
