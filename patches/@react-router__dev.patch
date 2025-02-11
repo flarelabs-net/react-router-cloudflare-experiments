@@ -1,8 +1,53 @@
 diff --git a/dist/vite.js b/dist/vite.js
-index d6d41ee82d5bdee34eabfb9b650b7d203b427880..88b1d1caadfd90ec53deadb5f3e5c3624bd535f2 100644
+index d6d41ee82d5bdee34eabfb9b650b7d203b427880..81c1e34f3e3d6cd73639fdfeffcd29c9b6376d88 100644
 --- a/dist/vite.js
 +++ b/dist/vite.js
-@@ -3913,7 +3913,16 @@ async function getEnvironmentOptionsResolvers(ctx, buildManifest, viteCommand) {
+@@ -115,6 +115,14 @@ function getVite() {
+   invariant(vite, "getVite() called before preloadVite()");
+   return vite;
+ }
++function loadModule(server, url) {
++  const vite = getVite();
++  const helperEnvironment = server.environments?.__react_router_helper__;
++
++  return helperEnvironment && vite.isRunnableDevEnvironment(helperEnvironment)
++    ? helperEnvironment.runner.import(url)
++    : server.ssrLoadModule(url);
++}
+ 
+ // vite/vite-node.ts
+ async function createContext(viteConfig = {}) {
+@@ -950,7 +958,7 @@ var getStylesForFiles = async ({
+   for (let dep of deps) {
+     if (dep.file && isCssFile(dep.file) && !isCssUrlWithoutSideEffects(dep.url)) {
+       try {
+-        let css = isCssModulesFile(dep.file) ? cssModulesManifest[dep.file] : (await viteDevServer.ssrLoadModule(
++        let css = isCssModulesFile(dep.file) ? cssModulesManifest[dep.file] : (await loadModule(viteDevServer,
+           // We need the ?inline query in Vite v6 when loading CSS in SSR
+           // since it does not expose the default export for CSS in a
+           // server environment. This is to align with non-SSR
+@@ -2535,7 +2543,10 @@ var reactRouterVitePlugin = () => {
+           // https://vitejs.dev/config/server-options#server-fs-allow
+           server: viteUserConfig.server?.fs?.allow ? { fs: { allow: defaultEntries } } : void 0,
+           ...ctx.reactRouterConfig.future.unstable_viteEnvironmentApi ? {
+-            environments,
++            environments: {
++              ...environments,
++              __react_router_helper__: {}
++            },
+             build: {
+               // This isn't honored by the SSR environment config (which seems
+               // to be a Vite bug?) so we set it here too.
+@@ -3161,7 +3172,7 @@ var reactRouterVitePlugin = () => {
+         let route = getRoute(ctx.reactRouterConfig, file);
+         let hmrEventData = { route: null };
+         if (route) {
+-          let serverManifest = (await server.ssrLoadModule(virtual.serverManifest.id)).default;
++          let serverManifest = (await loadModule(server, virtual.serverManifest.id)).default
+           let oldRouteMetadata = serverManifest.routes[route.id];
+           let newRouteMetadata = await getRouteMetadata(
+             cache,
+@@ -3913,7 +3924,16 @@ async function getEnvironmentOptionsResolvers(ctx, buildManifest, viteCommand) {
          rollupOptions: {
            input: (ctx.reactRouterConfig.future.unstable_viteEnvironmentApi ? viteUserConfig.environments?.ssr?.build?.rollupOptions?.input : viteUserConfig.build?.rollupOptions?.input) ?? virtual.serverBuild.id
          }

@@ -16,7 +16,8 @@ export default function Home({ loaderData }: Route.ComponentProps) {
   return (
     <>
       <Welcome message={loaderData.message} />
-      {/* <h1>Hello</h1> */}
+      {/* Add and remove the `h1` to test HMR */}
+      {/* <h1 style={{ textAlign: "center" }}>Hello world</h1> */}
     </>
   );
 }
