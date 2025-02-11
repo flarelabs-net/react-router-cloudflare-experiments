@@ -1,13 +1,10 @@
 diff --git a/dist/vite.js b/dist/vite.js
-index 12ddb57d94444a2de74d91ec8e76be905a95370e..c7b01a685c538dd2f0ef422bcaad8fa70cac36f6 100644
+index d6d41ee82d5bdee34eabfb9b650b7d203b427880..88b1d1caadfd90ec53deadb5f3e5c3624bd535f2 100644
 --- a/dist/vite.js
 +++ b/dist/vite.js
-@@ -3903,9 +3903,18 @@ async function getEnvironmentOptionsResolvers(ctx, buildManifest, viteCommand) {
-       build: {
-         outDir: getServerBuildDirectory(ctx),
+@@ -3913,7 +3913,16 @@ async function getEnvironmentOptionsResolvers(ctx, buildManifest, viteCommand) {
          rollupOptions: {
--          input: viteUserConfig.build?.rollupOptions?.input ?? virtual.serverBuild.id
-+          input: viteUserConfig.environments?.ssr?.build?.rollupOptions?.input ?? viteUserConfig.build?.rollupOptions?.input ?? virtual.serverBuild.id
+           input: (ctx.reactRouterConfig.future.unstable_viteEnvironmentApi ? viteUserConfig.environments?.ssr?.build?.rollupOptions?.input : viteUserConfig.build?.rollupOptions?.input) ?? virtual.serverBuild.id
          }
 -      }
 +      },

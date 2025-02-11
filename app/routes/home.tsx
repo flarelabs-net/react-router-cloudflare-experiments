@@ -13,5 +13,10 @@ export function loader({ context }: Route.LoaderArgs) {
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
-  return <Welcome message={loaderData.message} />;
+  return (
+    <>
+      <Welcome message={loaderData.message} />
+      {/* <h1>Hello</h1> */}
+    </>
+  );
 }

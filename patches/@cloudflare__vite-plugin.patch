@@ -1,5 +1,5 @@
 diff --git a/dist/index.js b/dist/index.js
-index 260a8e9c18d9fed87cda0d0573ec10f164c308e3..b0e8a13f654995c430394e925c36215133a09cd1 100644
+index 260a8e9c18d9fed87cda0d0573ec10f164c308e3..c160aefc52c8c05acd6475616784530861ed0eb6 100644
 --- a/dist/index.js
 +++ b/dist/index.js
 @@ -1304,6 +1304,7 @@ function createCloudflareEnvironmentOptions(workerConfig, userConfig, environmen
@@ -32,10 +32,10 @@ index 260a8e9c18d9fed87cda0d0573ec10f164c308e3..b0e8a13f654995c430394e925c362151
      },
 +    writeBundle() {
 +      if (
-+        resolvedPluginConfig.type === 'assets-only'
-+          ? this.environment.name === 'client'
-+          : this.environment.name ===
-+            resolvedPluginConfig.entryWorkerEnvironmentName
++        this.environment.name ===
++        (resolvedPluginConfig.type === "assets-only"
++          ? "client"
++          : resolvedPluginConfig.entryWorkerEnvironmentName)
 +      ) {
 +        writeDeployConfig(resolvedPluginConfig, resolvedViteConfig);
 +      }
