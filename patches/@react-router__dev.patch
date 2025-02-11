@@ -1,5 +1,5 @@
 diff --git a/dist/vite.js b/dist/vite.js
-index d6d41ee82d5bdee34eabfb9b650b7d203b427880..aea40120ade12cbab6e4e140e5cd4f5a49f53363 100644
+index d6d41ee82d5bdee34eabfb9b650b7d203b427880..2a00865777d7c20ca8f925efcbdc69baf87c769a 100644
 --- a/dist/vite.js
 +++ b/dist/vite.js
 @@ -918,7 +918,8 @@ var getStylesForFiles = async ({
@@ -41,18 +41,11 @@ index d6d41ee82d5bdee34eabfb9b650b7d203b427880..aea40120ade12cbab6e4e140e5cd4f5a
    });
    return styles;
  };
-@@ -1915,6 +1918,7 @@ var CLIENT_ROUTE_EXPORTS = [
- ];
- var BUILD_CLIENT_ROUTE_QUERY_STRING = "?__react-router-build-client-route";
- var SSR_BUNDLE_PREFIX = "ssrBundle_";
-+const HELPER_ENVIRONMENT_NAME = '__react_router_helper__';
- function isSeverBundleEnvironmentName(name) {
-   return name.startsWith(SSR_BUNDLE_PREFIX);
- }
-@@ -2428,6 +2432,22 @@ var reactRouterVitePlugin = () => {
+@@ -2428,6 +2431,23 @@ var reactRouterVitePlugin = () => {
        routes
      };
    };
++  const HELPER_ENVIRONMENT_NAME = '__react_router_helper__';
 +  const loadModule = (viteDevServer, url) => {
 +    if (ctx.reactRouterConfig.future.unstable_viteEnvironmentApi) {
 +      const vite = getVite();
@@ -72,7 +65,19 @@ index d6d41ee82d5bdee34eabfb9b650b7d203b427880..aea40120ade12cbab6e4e140e5cd4f5a
    return [
      {
        name: "react-router",
-@@ -2605,6 +2625,7 @@ var reactRouterVitePlugin = () => {
+@@ -2535,7 +2555,10 @@ var reactRouterVitePlugin = () => {
+           // https://vitejs.dev/config/server-options#server-fs-allow
+           server: viteUserConfig.server?.fs?.allow ? { fs: { allow: defaultEntries } } : void 0,
+           ...ctx.reactRouterConfig.future.unstable_viteEnvironmentApi ? {
+-            environments,
++            environments: {
++              ...environments,
++              [HELPER_ENVIRONMENT_NAME]: {}
++            },
+             build: {
+               // This isn't honored by the SSR environment config (which seems
+               // to be a Vite bug?) so we set it here too.
+@@ -2605,6 +2628,7 @@ var reactRouterVitePlugin = () => {
          }
          viteChildCompiler = await vite2.createServer({
            ...viteUserConfig,
@@ -80,7 +85,7 @@ index d6d41ee82d5bdee34eabfb9b650b7d203b427880..aea40120ade12cbab6e4e140e5cd4f5a
            mode: viteConfig.mode,
            server: {
              watch: viteConfig.command === "build" ? null : void 0,
-@@ -2655,7 +2676,8 @@ var reactRouterVitePlugin = () => {
+@@ -2655,7 +2679,8 @@ var reactRouterVitePlugin = () => {
                viteDevServer,
                cssModulesManifest,
                build,
@@ -90,7 +95,7 @@ index d6d41ee82d5bdee34eabfb9b650b7d203b427880..aea40120ade12cbab6e4e140e5cd4f5a
              });
            },
            // If an error is caught within the request handler, let Vite fix the
-@@ -3161,7 +3183,7 @@ var reactRouterVitePlugin = () => {
+@@ -3161,7 +3186,7 @@ var reactRouterVitePlugin = () => {
          let route = getRoute(ctx.reactRouterConfig, file);
          let hmrEventData = { route: null };
          if (route) {
@@ -99,7 +104,7 @@ index d6d41ee82d5bdee34eabfb9b650b7d203b427880..aea40120ade12cbab6e4e140e5cd4f5a
            let oldRouteMetadata = serverManifest.routes[route.id];
            let newRouteMetadata = await getRouteMetadata(
              cache,
-@@ -3913,9 +3935,19 @@ async function getEnvironmentOptionsResolvers(ctx, buildManifest, viteCommand) {
+@@ -3913,7 +3938,16 @@ async function getEnvironmentOptionsResolvers(ctx, buildManifest, viteCommand) {
          rollupOptions: {
            input: (ctx.reactRouterConfig.future.unstable_viteEnvironmentApi ? viteUserConfig.environments?.ssr?.build?.rollupOptions?.input : viteUserConfig.build?.rollupOptions?.input) ?? virtual.serverBuild.id
          }
@@ -116,7 +121,4 @@ index d6d41ee82d5bdee34eabfb9b650b7d203b427880..aea40120ade12cbab6e4e140e5cd4f5a
 +      } : undefined
      });
    }
-+  environmentOptionsResolvers[HELPER_ENVIRONMENT_NAME] = () => ({});
    return environmentOptionsResolvers;
- }
- function resolveEnvironmentsOptions(environmentResolvers, resolverOptions) {
