@@ -1,5 +1,5 @@
 diff --git a/dist/vite.js b/dist/vite.js
-index d6d41ee82d5bdee34eabfb9b650b7d203b427880..2ac1a247ea8a7bfc9a7b523ba38050046e9b0eca 100644
+index d6d41ee82d5bdee34eabfb9b650b7d203b427880..01ea713c611ce9e4525e61c73e7978c15c0364d2 100644
 --- a/dist/vite.js
 +++ b/dist/vite.js
 @@ -918,7 +918,8 @@ var getStylesForFiles = async ({
@@ -94,8 +94,8 @@ index d6d41ee82d5bdee34eabfb9b650b7d203b427880..2ac1a247ea8a7bfc9a7b523ba3805004
 +            {
 +              name: 'react-router:override-optimize-deps',
 +              config(userConfig) {
-+                if (ctx.reactRouterConfig.future.unstable_viteEnvironmentApi) {
-+                  for (const environmentName of Object.keys(userConfig.environments ?? {})) {
++                if (ctx.reactRouterConfig.future.unstable_viteEnvironmentApi && userConfig.environments) {
++                  for (const environmentName of Object.keys(userConfig.environments)) {
 +                    userConfig.environments[environmentName].optimizeDeps = { noDiscovery: true }
 +                  }
 +                } else {
