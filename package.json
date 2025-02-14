@@ -8,7 +8,7 @@
     "typecheck": "react-router typegen && tsc -b"
   },
   "dependencies": {
-    "@cloudflare/vite-plugin": "^0.0.2",
+    "@cloudflare/vite-plugin": "^0.1.1",
     "@react-router/serve": "0.0.0-nightly-f9f4a27a3-20250211",
     "isbot": "^5.1.17",
     "react": "^19.0.0",
@@ -32,7 +32,6 @@
   },
   "pnpm": {
     "patchedDependencies": {
-      "@cloudflare/vite-plugin": "patches/@cloudflare__vite-plugin.patch",
       "@react-router/dev": "patches/@react-router__dev.patch"
     }
   }
