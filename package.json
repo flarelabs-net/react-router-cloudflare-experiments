@@ -9,16 +9,16 @@
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^0.1.1",
-    "@react-router/serve": "0.0.0-nightly-f9f4a27a3-20250211",
+    "@react-router/serve": "0.0.0-nightly-6b677a71b-20250219",
     "isbot": "^5.1.17",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router": "0.0.0-nightly-f9f4a27a3-20250211"
+    "react-router": "0.0.0-nightly-6b677a71b-20250219"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20241112.0",
-    "@react-router/dev": "0.0.0-nightly-f9f4a27a3-20250211",
-    "@react-router/node": "0.0.0-nightly-f9f4a27a3-20250211",
+    "@react-router/dev": "0.0.0-nightly-6b677a71b-20250219",
+    "@react-router/node": "0.0.0-nightly-6b677a71b-20250219",
     "@types/node": "^20",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
@@ -29,10 +29,5 @@
     "vite": "^6.1.0",
     "vite-tsconfig-paths": "^5.1.4",
     "wrangler": "^3.105.0"
-  },
-  "pnpm": {
-    "patchedDependencies": {
-      "@react-router/dev": "patches/@react-router__dev.patch"
-    }
   }
 }
