@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  '@react-router/dev':
-    hash: 2sudvpnoobq7xn47xujpsyov3m
-    path: patches/@react-router__dev.patch
-
 importers:
 
   .:
@@ -17,8 +12,8 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1(vite@6.1.0(@types/node@20.17.16)(jiti@1.21.7)(yaml@2.7.0))(workerd@1.20250204.0)(wrangler@3.105.0(@cloudflare/workers-types@4.20250121.0))
       '@react-router/serve':
-        specifier: 0.0.0-nightly-f9f4a27a3-20250211
-        version: 0.0.0-nightly-f9f4a27a3-20250211(react-router@0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
+        specifier: 0.0.0-nightly-6b677a71b-20250219
+        version: 0.0.0-nightly-6b677a71b-20250219(react-router@0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
       isbot:
         specifier: ^5.1.17
         version: 5.1.21
@@ -29,18 +24,18 @@ importers:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
       react-router:
-        specifier: 0.0.0-nightly-f9f4a27a3-20250211
-        version: 0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 0.0.0-nightly-6b677a71b-20250219
+        version: 0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
       '@cloudflare/workers-types':
         specifier: ^4.20241112.0
         version: 4.20250121.0
       '@react-router/dev':
-        specifier: 0.0.0-nightly-f9f4a27a3-20250211
-        version: 0.0.0-nightly-f9f4a27a3-20250211(patch_hash=2sudvpnoobq7xn47xujpsyov3m)(@react-router/serve@0.0.0-nightly-f9f4a27a3-20250211(react-router@0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3))(@types/node@20.17.16)(jiti@1.21.7)(react-router@0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)(vite@6.1.0(@types/node@20.17.16)(jiti@1.21.7)(yaml@2.7.0))(wrangler@3.105.0(@cloudflare/workers-types@4.20250121.0))(yaml@2.7.0)
+        specifier: 0.0.0-nightly-6b677a71b-20250219
+        version: 0.0.0-nightly-6b677a71b-20250219(@react-router/serve@0.0.0-nightly-6b677a71b-20250219(react-router@0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3))(@types/node@20.17.16)(jiti@1.21.7)(react-router@0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)(vite@6.1.0(@types/node@20.17.16)(jiti@1.21.7)(yaml@2.7.0))(wrangler@3.105.0(@cloudflare/workers-types@4.20250121.0))(yaml@2.7.0)
       '@react-router/node':
-        specifier: 0.0.0-nightly-f9f4a27a3-20250211
-        version: 0.0.0-nightly-f9f4a27a3-20250211(react-router@0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
+        specifier: 0.0.0-nightly-6b677a71b-20250219
+        version: 0.0.0-nightly-6b677a71b-20250219(react-router@0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
       '@types/node':
         specifier: ^20
         version: 20.17.16
@@ -670,13 +665,13 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@react-router/dev@0.0.0-nightly-f9f4a27a3-20250211':
-    resolution: {integrity: sha512-NYmodqPNWTB/suVmicC9YqvslMXhoZQDSdFPtagSai+74kPC8OMbpShKqzAL+two11j/kbA1WNljtNzetDJ7lQ==}
+  '@react-router/dev@0.0.0-nightly-6b677a71b-20250219':
+    resolution: {integrity: sha512-uheeH+L1F0YMnMCVo5zNIxLM/vp+RSqiDL/lum1JlHctqd9P27sqhN87UhgMIHxe1PbQNG/z9Dh0HNKxKCrfRw==}
     engines: {node: '>=20.0.0'}
     hasBin: true
     peerDependencies:
-      '@react-router/serve': ^0.0.0-nightly-f9f4a27a3-20250211
-      react-router: ^0.0.0-nightly-f9f4a27a3-20250211
+      '@react-router/serve': ^0.0.0-nightly-6b677a71b-20250219
+      react-router: ^0.0.0-nightly-6b677a71b-20250219
       typescript: ^5.1.0
       vite: ^5.1.0 || ^6.0.0
       wrangler: ^3.28.2
@@ -688,33 +683,33 @@ packages:
       wrangler:
         optional: true
 
-  '@react-router/express@0.0.0-nightly-f9f4a27a3-20250211':
-    resolution: {integrity: sha512-jbcWdXKddLv6RxHgzpbRc9F2wikKjpDqxH2SODH5ANyMdf93176rsrmQRWD1UTdV/mpdZlK9Kaw9vSzjySTdRQ==}
+  '@react-router/express@0.0.0-nightly-6b677a71b-20250219':
+    resolution: {integrity: sha512-8x6BzoLGIxKcoIdYq8AT32MYXjDwPa+wXazxVFfndzdjJalcCT+iXi3YwBKjk6qDimEwoDgZTs7ZTz+f/F+Dwg==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       express: ^4.17.1
-      react-router: 0.0.0-nightly-f9f4a27a3-20250211
+      react-router: 0.0.0-nightly-6b677a71b-20250219
       typescript: ^5.1.0
     peerDependenciesMeta:
       typescript:
         optional: true
 
-  '@react-router/node@0.0.0-nightly-f9f4a27a3-20250211':
-    resolution: {integrity: sha512-s4ixHhrNA3VdK8i9rFL8EcYnFlIy/eiKZGH0ig+Oc7nM5Yh+pf6hDFrVjVL5Is1mmiOnbtUpSk2ZoH3UMWTRgQ==}
+  '@react-router/node@0.0.0-nightly-6b677a71b-20250219':
+    resolution: {integrity: sha512-/fGgqpq4f423Y1EGCFczNGDGV6r+ZzUfI3iJLtOO1iePvefY8hOm5rGGkHhO1XmK9quInc4nigXtSD23JAjrQg==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
-      react-router: 0.0.0-nightly-f9f4a27a3-20250211
+      react-router: 0.0.0-nightly-6b677a71b-20250219
       typescript: ^5.1.0
     peerDependenciesMeta:
       typescript:
         optional: true
 
-  '@react-router/serve@0.0.0-nightly-f9f4a27a3-20250211':
-    resolution: {integrity: sha512-QHy2TfNUFCkfZWKx0jwFAMa2v0+q+sLEeAKsmsk51IF4WYOd5moEODKAZB63xKIUwxFNr+jmsAYovXeP/6vTjA==}
+  '@react-router/serve@0.0.0-nightly-6b677a71b-20250219':
+    resolution: {integrity: sha512-owijaJsZwSbilzYKC6KN1Z8pfV6PnHHFfGVx97SP6Uv4+jEu8PGtE68rpLNheIoHgob09q9yDvsrCPqQrc7kMg==}
     engines: {node: '>=20.0.0'}
     hasBin: true
     peerDependencies:
-      react-router: 0.0.0-nightly-f9f4a27a3-20250211
+      react-router: 0.0.0-nightly-6b677a71b-20250219
 
   '@rollup/rollup-android-arm-eabi@4.31.0':
     resolution: {integrity: sha512-9NrR4033uCbUBRgvLcBrJofa2KY9DzxL2UKZ1/4xA/mnTNyhZCWBuD8X3tPm1n4KxcgaraOYgrFKSgwjASfmlA==}
@@ -1702,8 +1697,8 @@ packages:
     resolution: {integrity: sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==}
     engines: {node: '>=0.10.0'}
 
-  react-router@0.0.0-nightly-f9f4a27a3-20250211:
-    resolution: {integrity: sha512-dmh4xbTLix3YBp0Pmc7d9xUkOQROUzba819zRQ1HE/crlFMNPfnT9xTR82bbIowqt6xQFyEiBtFHwlta4w7mVg==}
+  react-router@0.0.0-nightly-6b677a71b-20250219:
+    resolution: {integrity: sha512-J5kQCBqTuf4yXXI+WI4j5xT1IqpAj+HEDy/NAsr7VlmI3FqtXqt34dyoK1P5GgjQEdWvpWPI5Gy+X26SroHQlQ==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       react: '>=18'
@@ -2658,7 +2653,7 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@react-router/dev@0.0.0-nightly-f9f4a27a3-20250211(patch_hash=2sudvpnoobq7xn47xujpsyov3m)(@react-router/serve@0.0.0-nightly-f9f4a27a3-20250211(react-router@0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3))(@types/node@20.17.16)(jiti@1.21.7)(react-router@0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)(vite@6.1.0(@types/node@20.17.16)(jiti@1.21.7)(yaml@2.7.0))(wrangler@3.105.0(@cloudflare/workers-types@4.20250121.0))(yaml@2.7.0)':
+  '@react-router/dev@0.0.0-nightly-6b677a71b-20250219(@react-router/serve@0.0.0-nightly-6b677a71b-20250219(react-router@0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3))(@types/node@20.17.16)(jiti@1.21.7)(react-router@0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)(vite@6.1.0(@types/node@20.17.16)(jiti@1.21.7)(yaml@2.7.0))(wrangler@3.105.0(@cloudflare/workers-types@4.20250121.0))(yaml@2.7.0)':
     dependencies:
       '@babel/core': 7.26.0
       '@babel/generator': 7.26.5
@@ -2669,7 +2664,7 @@ snapshots:
       '@babel/traverse': 7.26.5
       '@babel/types': 7.26.5
       '@npmcli/package-json': 4.0.1
-      '@react-router/node': 0.0.0-nightly-f9f4a27a3-20250211(react-router@0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
+      '@react-router/node': 0.0.0-nightly-6b677a71b-20250219(react-router@0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
       arg: 5.0.2
       babel-dead-code-elimination: 1.0.8
       chokidar: 4.0.3
@@ -2685,14 +2680,14 @@ snapshots:
       picomatch: 2.3.1
       prettier: 2.8.8
       react-refresh: 0.14.2
-      react-router: 0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react-router: 0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       semver: 7.6.3
       set-cookie-parser: 2.7.1
       valibot: 0.41.0(typescript@5.7.3)
       vite: 6.1.0(@types/node@20.17.16)(jiti@1.21.7)(yaml@2.7.0)
       vite-node: 3.0.0-beta.2(@types/node@20.17.16)(jiti@1.21.7)(yaml@2.7.0)
     optionalDependencies:
-      '@react-router/serve': 0.0.0-nightly-f9f4a27a3-20250211(react-router@0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
+      '@react-router/serve': 0.0.0-nightly-6b677a71b-20250219(react-router@0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
       typescript: 5.7.3
       wrangler: 3.105.0(@cloudflare/workers-types@4.20250121.0)
     transitivePeerDependencies:
@@ -2711,33 +2706,33 @@ snapshots:
       - tsx
       - yaml
 
-  '@react-router/express@0.0.0-nightly-f9f4a27a3-20250211(express@4.21.2)(react-router@0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)':
+  '@react-router/express@0.0.0-nightly-6b677a71b-20250219(express@4.21.2)(react-router@0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)':
     dependencies:
-      '@react-router/node': 0.0.0-nightly-f9f4a27a3-20250211(react-router@0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
+      '@react-router/node': 0.0.0-nightly-6b677a71b-20250219(react-router@0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
       express: 4.21.2
-      react-router: 0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react-router: 0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     optionalDependencies:
       typescript: 5.7.3
 
-  '@react-router/node@0.0.0-nightly-f9f4a27a3-20250211(react-router@0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)':
+  '@react-router/node@0.0.0-nightly-6b677a71b-20250219(react-router@0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)':
     dependencies:
       '@mjackson/node-fetch-server': 0.2.0
-      react-router: 0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react-router: 0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       source-map-support: 0.5.21
       stream-slice: 0.1.2
       undici: 6.21.1
     optionalDependencies:
       typescript: 5.7.3
 
-  '@react-router/serve@0.0.0-nightly-f9f4a27a3-20250211(react-router@0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)':
+  '@react-router/serve@0.0.0-nightly-6b677a71b-20250219(react-router@0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)':
     dependencies:
-      '@react-router/express': 0.0.0-nightly-f9f4a27a3-20250211(express@4.21.2)(react-router@0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
-      '@react-router/node': 0.0.0-nightly-f9f4a27a3-20250211(react-router@0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
+      '@react-router/express': 0.0.0-nightly-6b677a71b-20250219(express@4.21.2)(react-router@0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
+      '@react-router/node': 0.0.0-nightly-6b677a71b-20250219(react-router@0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
       compression: 1.7.5
       express: 4.21.2
       get-port: 5.1.1
       morgan: 1.10.0
-      react-router: 0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react-router: 0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       source-map-support: 0.5.21
     transitivePeerDependencies:
       - supports-color
@@ -3707,7 +3702,7 @@ snapshots:
 
   react-refresh@0.14.2: {}
 
-  react-router@0.0.0-nightly-f9f4a27a3-20250211(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  react-router@0.0.0-nightly-6b677a71b-20250219(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       '@types/cookie': 0.6.0
       cookie: 1.0.2
